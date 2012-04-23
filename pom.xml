@@ -9,7 +9,7 @@
   	<dependency>
   		<groupId>org.springframework.social</groupId>
   		<artifactId>spring-social-core</artifactId>
-  		<version>1.0.0.RC2</version>
+  		<version>1.0.0.RELEASE</version>
   	</dependency>
   	<dependency>
   		<groupId>junit</groupId>
