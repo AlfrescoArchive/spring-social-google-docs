@@ -6,11 +6,27 @@
   <groupId>org.springframework.social</groupId>
   <url>https://github.com/jottley/spring-social-google-docs</url>
   <dependencies>
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>3.1.0.RELEASE</version>
+	</dependency>
   	<dependency>
   		<groupId>org.springframework.social</groupId>
   		<artifactId>spring-social-core</artifactId>
-  		<version>1.0.0.RELEASE</version>
+  		<version>1.0.2.RELEASE</version>
   	</dependency>
+         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>3.1.0.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
@@ -25,7 +41,7 @@
   	<dependency>
   		<groupId>javax.mail</groupId>
   		<artifactId>mail</artifactId>
-  		<version>1.3.3</version>
+  		<version>1.4.5</version>
   	</dependency>
   	<dependency>
   		<groupId>com.google.code.findbugs</groupId>
