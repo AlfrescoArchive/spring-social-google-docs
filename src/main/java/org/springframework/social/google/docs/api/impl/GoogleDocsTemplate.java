@@ -24,7 +24,7 @@ public class GoogleDocsTemplate
 
     public DocsService setAuthentication(DocsService docsService)
     {
-        docsService.setHeader("Authorization", "OAuth " + accessToken);
+        docsService.setHeader("Authorization", "Bearer " + accessToken);
         return docsService;
     }
 }
