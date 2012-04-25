@@ -2,10 +2,10 @@
 package org.springframework.social.google.docs.api;
 
 
-import com.google.gdata.data.docs.MetadataEntry;
+import com.google.gdata.client.docs.DocsService;
 
 
 public interface GoogleDocs
 {
-    public MetadataEntry getUserMetadata();
+    public DocsService setAuthentication(DocsService docsService);
 }

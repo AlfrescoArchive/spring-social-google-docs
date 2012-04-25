@@ -2,6 +2,10 @@
 package org.springframework.social.google.docs.connect;
 
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.springframework.social.ApiException;
 import org.springframework.social.OperationNotPermittedException;
 import org.springframework.social.connect.ApiAdapter;
@@ -10,23 +14,29 @@ import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.google.docs.api.GoogleDocs;
 
+import com.google.gdata.client.docs.DocsService;
 import com.google.gdata.data.docs.MetadataEntry;
+import com.google.gdata.util.ServiceException;
 
 
 public class GoogleDocsAdapter
     implements ApiAdapter<GoogleDocs>
 {
+    private static String BASE_URL     = "https://docs.google.com/";
+    private static String METADATA_URL = BASE_URL + "feeds/metadata/default";
+
 
     public UserProfile fetchUserProfile(GoogleDocs googleDocs)
     {
-        MetadataEntry entry = googleDocs.getUserMetadata();
+        MetadataEntry entry = this.getUserMetadata(googleDocs);
         return new UserProfileBuilder().setName(entry.getAuthors().get(0).getName()).setEmail(entry.getAuthors().get(0).getEmail()).setUsername(entry.getAuthors().get(0).getName()).build();
     }
 
 
     public void setConnectionValues(GoogleDocs googleDocs, ConnectionValues values)
     {
-        MetadataEntry entry = googleDocs.getUserMetadata();
+        MetadataEntry entry = this.getUserMetadata(googleDocs);
+
         values.setProviderUserId(entry.getEtag());
         values.setDisplayName(entry.getAuthors().get(0).getName());
     }
@@ -36,7 +46,7 @@ public class GoogleDocsAdapter
     {
         try
         {
-            googleDocs.getUserMetadata();
+            this.getUserMetadata(googleDocs);
             return true;
         }
         catch (ApiException e)
@@ -52,4 +62,27 @@ public class GoogleDocsAdapter
 
     }
 
+
+    private MetadataEntry getUserMetadata(GoogleDocs googleDocs)
+    {
+        DocsService docsService = new DocsService("spring-social-google-docs/1.0");
+        docsService = googleDocs.setAuthentication(docsService);
+
+        try
+        {
+            return docsService.getEntry(new URL(METADATA_URL), MetadataEntry.class);
+        }
+        catch (MalformedURLException e)
+        {
+            throw new ApiException(e.getMessage());
+        }
+        catch (IOException e)
+        {
+            throw new ApiException(e.getMessage());
+        }
+        catch (ServiceException e)
+        {
+            throw new ApiException(e.getMessage());
+        }
+    }
 }
