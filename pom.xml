@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>spring-social-google-docs</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-RELEASE</version>
   <name>spring-social-google-docs</name>
   <groupId>org.springframework.social</groupId>
   <url>https://github.com/jottley/spring-social-google-docs</url>
@@ -83,4 +83,17 @@
   		<systemPath>${project.basedir}/lib/gdata-media-1.0.jar</systemPath>
   	</dependency>
   </dependencies>
+  <organization>
+  	<name>Alfresco Software, Inc.</name>
+  	<url>http://www.alfresco.com</url>
+  </organization>
+  <scm>
+  	<connection>SSH</connection>
+  	<developerConnection>Jared Ottley &lt;jared.ottley@alfresco.com</developerConnection>
+  	<url>git://github.com/Alfresco/spring-social-google-docs.git</url>
+  </scm>
+  <issueManagement>
+  	<url>https://github.com/Alfresco/spring-social-google-docs/issues</url>
+  	<system>Github</system>
+  </issueManagement>
 </project>
