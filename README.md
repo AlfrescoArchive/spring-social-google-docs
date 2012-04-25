@@ -3,6 +3,8 @@ spring-social-google-docs
 
 Spring Social Google Docs
 
+This is a Spring Social OAuth2 wrapper to the Google DocsService.
+
 How to use
 
 	GoogleDocsConnectionFactory connectionFactory = new GoogleDocsConnectionFactory(consumerKey, consumerSecret);
