@@ -5,6 +5,9 @@ Spring Social Google Docs
 
 This is a Spring Social OAuth2 wrapper to the Google DocsService.
 
+It's in Maven!
+The package is available in the Alfresco 3rd Party Repository https://artifacts.alfresco.com/nexus/content/repositories/thirdparty
+
 How to use
 
 	GoogleDocsConnectionFactory connectionFactory = new GoogleDocsConnectionFactory(consumerKey, consumerSecret);
