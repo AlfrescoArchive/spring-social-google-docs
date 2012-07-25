@@ -56,38 +56,33 @@
   	<!-- horrible ugliness -->
   	<dependency>
   		<groupId>com.google.gdata</groupId>
-  		<artifactId>client</artifactId>
+  		<artifactId>com.google.gdata.gdata-client</artifactId>
   		<version>1.0</version>
-  		<scope>system</scope>
-  		<systemPath>${project.basedir}/lib/gdata-client-1.0.jar</systemPath>
+  		<scope>provided</scope>
   	</dependency>
   	<dependency>
   		<groupId>com.google.gdata</groupId>
-  		<artifactId>core</artifactId>
+  		<artifactId>com.google.gdata.gdata-core</artifactId>
   		<version>1.0</version>
-  		<scope>system</scope>
-  		<systemPath>${project.basedir}/lib/gdata-core-1.0.jar</systemPath>
+  		<scope>provided</scope>
   	</dependency>
   	<dependency>
   		<groupId>com.google.gdata</groupId>
-  		<artifactId>docs</artifactId>
+  		<artifactId>com.google.gdata.gdata-docs</artifactId>
   		<version>3.0</version>
-  		<scope>system</scope>
-  		<systemPath>${project.basedir}/lib/gdata-docs-3.0.jar</systemPath>
+  		<scope>provided</scope>
   	</dependency>
   	<dependency>
   		<groupId>com.google.gdata</groupId>
-  		<artifactId>media</artifactId>
+  		<artifactId>com.google.gdata.gdata-media</artifactId>
   		<version>1.0</version>
-  		<scope>system</scope>
-  		<systemPath>${project.basedir}/lib/gdata-media-1.0.jar</systemPath>
+  		<scope>provided</scope>
   	</dependency>
    <dependency>
       <groupId>com.google.gdata</groupId>
-      <artifactId>spreadsheet</artifactId>
+      <artifactId>com.google.gdata.gdata-spreadsheet</artifactId>
       <version>3.0</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/lib/gdata-spreadsheet-3.0.jar</systemPath>
+      <scope>provided</scope>
    </dependency>
   </dependencies>
   <organization>
